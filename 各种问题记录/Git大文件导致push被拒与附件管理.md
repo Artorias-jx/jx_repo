@@ -99,3 +99,4 @@ Git 适合跟踪文本文件（源码、文档），不适合跟踪大型二进�
 - [GitHub 文件大小限制](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
 - [Git LFS 官方文档](https://git-lfs.com/)
 - [其他网络配置问题](github克隆问题.md)
+[[知识卡片]]
