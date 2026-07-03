@@ -5,10 +5,10 @@
 
 **其他next：** 不匹配前划线，模式串后退，直到线前对上，或模式串完全跨过，此时j为值。
 示例 T = "ababaa"
-![652](assets/1.%20数据结构知识/求next数组.png)
+![652](assets/求next数组.png)
 ## 求nextval数组
 示例图
-![625](assets/1.%20数据结构知识/求nextval数组.png)
+![625](assets/求nextval数组.png)
 先求 $next$ 数组，之后求 $nextval$  $nextval[1]=0$ 固定
 若 $j$ 所指字符与 $next[j]$ 所指字符不相等
 如 $j=2$，$T[2]=b$，$T[next[2]]=a$，$nextval[j]=next[j]$
@@ -16,7 +16,7 @@
 如 $j=3$，$a$ 与 $a$ 等，则 $nextval[3]=nextval[1]=0$
 $j=5$，$T[next[5]]=a=T[5]$，$nextval[5]=nextval[next[5]]$
 ## 右滑距离
-![394](assets/1.%20数据结构知识/求右滑距离.png)
+![394](assets/求右滑距离.png)
 **右滑距离：** $j - nextval[j]$
 为当前失配回到何处距离，
 向右滑，即指针不动，滑 $S$，
