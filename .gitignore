@@ -4,6 +4,7 @@
 # 但保留这两个文件夹
 !/408/
 !/数学/
+!/assets/
 
 # 保留 .gitignore 本身
 !.gitignore
