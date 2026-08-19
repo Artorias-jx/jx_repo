@@ -5,6 +5,7 @@
 !/408/
 !/数学/
 !/assets/
+!/README.md
 
 # 保留 .gitignore 本身
 !.gitignore
