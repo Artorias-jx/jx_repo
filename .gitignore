@@ -10,3 +10,9 @@
 /408/Attachments
 .claudian/
 .trash/
+
+# AI-generated conversation files in root
+/Agent.md
+/Claude.md
+/Gemini.md
+/IDEA.md
