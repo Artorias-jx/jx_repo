@@ -10,3 +10,6 @@
 
 # 保留 .gitignore 本身
 !.gitignore
+
+# 忽略 WorkBuddy 的项目数据（记忆、技能等）
+.workbuddy/
