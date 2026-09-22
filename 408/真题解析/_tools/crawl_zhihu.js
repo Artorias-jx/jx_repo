@@ -33,8 +33,20 @@ function decodeTex(t) {
   return t.replace(/&quot;/g, '"').replace(/&#39;/g, "'")
     .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 }
+/**
+ * 判定是否「多行块公式」→ 输出 $$...$$
+ *
+ * 只有真正的 LaTeX 环境才算块公式。**不能因为含 `\\` 就判为块公式** ——
+ * 知乎作者常在行内公式末尾多写一个 `\\`（LaTeX 换行残留），
+ * 若据此提为块公式，会把一整句劈成三段（2026-09-22 踩坑：2010/2022 数据结构
+ * 的「根据贪心策略，若 G 一定连通，则需要 [公式] 即先分成…」）。
+ */
 function isBlockMath(t) {
-  return /\\begin\{(array|aligned|matrix|cases|bmatrix|pmatrix|vmatrix)\}|\\\\/.test(t);
+  return /\\begin\{(array|aligned|matrix|cases|bmatrix|pmatrix|vmatrix|split|gather|align)\}/.test(t);
+}
+/** 清行内公式末尾多余的 `\\`（知乎常见笔误） */
+function tidyInlineTex(t) {
+  return t.trim().replace(/\\{1,2}$/, '').trim();
 }
 
 /** HTML -> Markdown（图文位置完整还原） */
@@ -66,7 +78,7 @@ function html2md(html, title) {
         const block = isBlockMath(tex);
         const ph = (block ? 'ZZMATHB' : 'ZZMATHI') + out.length + 'ZZ';
         out.push(block ? `\n\n${ph}\n\n` : ph);
-        texStore[ph] = block ? `\n\n$$${tex}$$\n\n` : `$${tex}$`;
+        texStore[ph] = block ? `\n\n$$${tex}$$\n\n` : `$${tidyInlineTex(tex)}$`;
       }
       i = j;
     }
