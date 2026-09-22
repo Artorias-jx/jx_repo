@@ -189,6 +189,21 @@ function html2md(html, title) {
     return whole;
   });
 
+  // 8. 表格分隔行规范化（2026-09-22 关键修复）
+  //    知乎原文为对齐列宽会把分隔行写成 `| ------------ | --- |`（12 个短横线）。
+  //    Obsidian **实时预览**（CodeMirror）解析这种超长短横线时列宽计算异常 -> widget 抛错
+  //    -> 该块及其后所有块渲染中断（阅读视图走另一条路径，所以正常）。
+  //    全库唯 1 处（2024 数据结构:275），却让整篇显示崩坏 —— 极易误判为「缓存/模式」问题。
+  //    统一为每列恰好 `---`。注意：含对齐标记（:--- / ---:）的单元格原样保留，不误伤。
+  md = md.split('\n').map(L => {
+    const t = L.trim();
+    if (/^\|[\s|:\-]+\|$/.test(t) && /-{4,}/.test(t)) {
+      return '| ' + t.slice(1, -1).split('|')
+        .map(c => /:/.test(c) ? c.trim() : '---').join(' | ') + ' |';
+    }
+    return L;
+  }).join('\n');
+
   return { md: `# ${title}\n\n${md}\n`, imgCount: n,
            mathCount: (md.match(/\$/g) || []).length / 2 };
 }

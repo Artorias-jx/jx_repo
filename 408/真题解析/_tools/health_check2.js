@@ -24,7 +24,7 @@ const files = listMd();
 const hits = {};
 const KINDS = ['HTML实体未解码','占位符残留','裸HTML标签','块公式尾反斜杠','ZWJ零宽字符',
   '行内公式首位空格','行内公式尾空格','同行未闭合$','data/class属性残留','description残留',
-  '单选题说明句','空markdown表','连续3+空行','图片空路径','知乎跳转'];
+  '单选题说明句','空markdown表','连续3+空行','图片空路径','知乎跳转','表格分隔行超长短横线'];
 KINDS.forEach(k => hits[k] = []);
 
 function rec(kind, f, ln, text) {
@@ -46,6 +46,15 @@ for (const f of files) {
     if (/!\[\]\(\s*\)/.test(L)) rec('图片空路径', f, ln, L.trim());
     if (/^\s*description\s*:/.test(L)) rec('description残留', f, ln, L.trim());
     if (/第\s*\d+\s*~\s*40\s*小题/.test(L)) rec('单选题说明句', f, ln, L.trim());
+
+    // 表格分隔行必须是每列恰好 `---`（3 个短横线）。
+    // 知乎原文用长横线对齐列宽（如 `| ------------ | --- |`），Obsidian 实时预览
+    // 解析该行时会因列宽计算异常而中断整篇后续渲染（2026-09-22 实测：
+    // 2024 数据结构篇 L275 是全库唯一一处，正是「只有这一篇显示不对」的真凶）。
+    if (/^\|[\s|:\-]+\|\s*$/.test(L.trim()) && L.includes('-')) {
+      const longs = (L.match(/-{4,}/g) || []);
+      if (longs.length) rec('表格分隔行超长短横线', f, ln, L.trim());
+    }
 
     const stripped = L.replace(/\$\$/g, '');
     if ((stripped.match(/(?<!\\)\$/g) || []).length % 2 !== 0) rec('同行未闭合$', f, ln, L.trim());
