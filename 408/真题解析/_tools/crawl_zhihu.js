@@ -44,7 +44,14 @@ function decodeTex(t) {
 function isBlockMath(t) {
   return /\\begin\{(array|aligned|matrix|cases|bmatrix|pmatrix|vmatrix|split|gather|align)\}/.test(t);
 }
-/** 清行内公式末尾多余的 `\\`（知乎常见笔误） */
+/**
+ * 清行内公式首位多余的空格 + 末尾多余的 `\\`（知乎常见笔误）
+ *
+ * **首位空格必须清**（2026-09-22 踩坑）：知乎 data-tex 常以空格开头写成
+ *   data-tex="\underbrace{1}_{...}{\rm H} "  /  data-tex=" \rm \underbrace{..."
+ * 若不清，输出 `$ xxx$` —— **LaTeX 行内公式首字符是空格时，MathJax 会渲染成
+ * 另起一行的块级公式**，把整句话劈成三段（2009 操作系统第 45 题第二步）。
+ */
 function tidyInlineTex(t) {
   return t.trim().replace(/\\{1,2}$/, '').trim();
 }
@@ -71,7 +78,9 @@ function html2md(html, title) {
         else { depth--; j = nc + 7; if (depth === 0) break; }
       }
       const whole = html.slice(start, j);
-      const m = whole.match(/data-tex="([^"]*)"/);
+      // 必须用 [\s\S] 才能匹配跨行的 data-tex（2026-09-22：知乎存在 data-tex 内含换行的长公式，
+      // 用 [^"]* 会静默失配 -> tex 取到空串 -> 整个公式被静默丢弃）
+      const m = whole.match(/data-tex="([\s\S]*?)"/);
       const tex = m ? decodeTex(m[1]) : '';
       out.push(html.slice(i, start));
       if (tex) {
@@ -121,12 +130,47 @@ function html2md(html, title) {
 
   let md = td.turndown(html);
 
+  // 4.5 表格：turndown keep 保留的裸 HTML 表格 -> Markdown 表格（2026-09-22 补）
+  //     Obsidian 对裸 <table> 渲染很差（无边框、&lt; 不解析），必须转
+  md = md.replace(/<table\b[^>]*>([\s\S]*?)<\/table>/gi, (whole, inner) => {
+    const rows = [];
+    for (const rm of inner.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+      const cells = [];
+      for (const cm of rm[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)) {
+        let s = cm[1].replace(/<br\s*\/?>/gi, ' ');
+        s = s.replace(/<[^>]+>/g, '');
+        s = s.replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+             .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+             .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
+        s = s.replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim();
+        cells.push(s);
+      }
+      if (cells.length) rows.push(cells);
+    }
+    if (!rows.length) return whole;
+    const w = Math.max(...rows.map(r => r.length));
+    rows.forEach(r => { while (r.length < w) r.push(''); });
+    // 单行表格 = 作者画的「结构示意框」-> 转 ASCII 框代码块
+    if (rows.length === 1) {
+      const wi = rows[0].map(c => Math.max(c.length, 3));
+      const top = '┌' + wi.map(x => '─'.repeat(x + 2)).join('┬') + '┐';
+      const mid = '│' + rows[0].map((c, k) => ' ' + c.padEnd(wi[k]) + ' ').join('│') + '│';
+      const bot = '└' + wi.map(x => '─'.repeat(x + 2)).join('┴') + '┘';
+      return `\n\n\`\`\`\n${top}\n${mid}\n${bot}\n\`\`\`\n\n`;
+    }
+    const lines = [ '| ' + rows[0].join(' | ') + ' |',
+                    '|' + Array(w).fill(' --- ').join('|') + '|' ];
+    for (let k = 1; k < rows.length; k++) lines.push('| ' + rows[k].join(' | ') + ' |');
+    return `\n\n${lines.join('\n')}\n\n`;
+  });
+
   // 5. 还原占位符
   for (const [p, v] of Object.entries(texStore)) md = md.split(p).join(v);
   for (const [p, v] of Object.entries(imgStore)) md = md.split(p).join(v);
 
   // 6. 收尾
-  md = md.replace(/\u200b/g, '')
+  md = md.replace(/[\u200c\u200d]/g, '')          // ZWNJ/ZWJ 零宽字符（知乎原文携带）
+    .replace(/\u200b/g, '')                        // 零宽空格
     .replace(/^<div[^>]*>\s*$/gm, '')
     .replace(/^<\/div>\s*$/gm, '')
     .replace(/^\s*收起\s*$/gm, '')
@@ -134,6 +178,16 @@ function html2md(html, title) {
     .replace(/^第\s*\d+\s*~\s*40\s*小题[^\n]*最符合题目要求的。\s*$/gm, '')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+
+  // 7. 行内公式首尾空格清理（2026-09-22 关键修复）
+  //    `$ 边数\ge 顶点数-1$` 这种「$ 后紧跟空格」会被 MathJax 判为 display 模式，
+  //    单独换行渲染 -> 整句话被劈开，是用户报的「显示有 bug」主因。
+  //    注意：只清最外层首尾，公式内部的双空格（排版用）保留。
+  md = md.replace(/(?<!\$)\$([^$\n]+)\$(?!\$)/g, (whole, body) => {
+    const t = body.trim();
+    if (t !== body) return `$${t}$`;
+    return whole;
+  });
 
   return { md: `# ${title}\n\n${md}\n`, imgCount: n,
            mathCount: (md.match(/\$/g) || []).length / 2 };

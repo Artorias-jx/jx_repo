@@ -1,0 +1,18 @@
+﻿扫描文件: 64 篇
+OK  HTML实体未解码: 0
+OK  占位符残留: 0
+OK  裸HTML标签: 0
+OK  块公式尾反斜杠: 0
+OK  ZWJ零宽字符: 0
+OK  行内公式首位空格: 0
+OK  行内公式尾空格: 0
+OK  同行未闭合$: 0
+OK  data/class属性残留: 0
+OK  description残留: 0
+OK  单选题说明句: 0
+OK  空markdown表: 0
+OK  连续3+空行: 0
+OK  图片空路径: 0
+OK  知乎跳转: 0
+
+合计命中: 0
