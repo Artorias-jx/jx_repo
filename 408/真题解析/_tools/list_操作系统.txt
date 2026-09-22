@@ -1,0 +1,18 @@
+# 408 真题解析 · 操作系统（2009-2024）
+# 格式: 年份|科目|URL
+2009|操作系统|https://zhuanlan.zhihu.com/p/660448410
+2010|操作系统|https://zhuanlan.zhihu.com/p/661460035
+2011|操作系统|https://zhuanlan.zhihu.com/p/662323033
+2012|操作系统|https://zhuanlan.zhihu.com/p/662722910
+2013|操作系统|https://zhuanlan.zhihu.com/p/663305693
+2014|操作系统|https://zhuanlan.zhihu.com/p/663658685
+2015|操作系统|https://zhuanlan.zhihu.com/p/663997712
+2016|操作系统|https://zhuanlan.zhihu.com/p/664402754
+2017|操作系统|https://zhuanlan.zhihu.com/p/664711902
+2018|操作系统|https://zhuanlan.zhihu.com/p/665093606
+2019|操作系统|https://zhuanlan.zhihu.com/p/665174631
+2020|操作系统|https://zhuanlan.zhihu.com/p/665706193
+2021|操作系统|https://zhuanlan.zhihu.com/p/665976687
+2022|操作系统|https://zhuanlan.zhihu.com/p/666335788
+2023|操作系统|https://zhuanlan.zhihu.com/p/666484856
+2024|操作系统|https://zhuanlan.zhihu.com/p/720420302

@@ -1,0 +1,18 @@
+# 408 真题解析 · 计算机组成原理（2009-2024）
+# 格式: 年份|科目|URL
+2009|计算机组成原理|https://zhuanlan.zhihu.com/p/655146454
+2010|计算机组成原理|https://zhuanlan.zhihu.com/p/655158544
+2011|计算机组成原理|https://zhuanlan.zhihu.com/p/655359809
+2012|计算机组成原理|https://zhuanlan.zhihu.com/p/655703855
+2013|计算机组成原理|https://zhuanlan.zhihu.com/p/656428754
+2014|计算机组成原理|https://zhuanlan.zhihu.com/p/636499726
+2015|计算机组成原理|https://zhuanlan.zhihu.com/p/657446018
+2016|计算机组成原理|https://zhuanlan.zhihu.com/p/657849161
+2017|计算机组成原理|https://zhuanlan.zhihu.com/p/658148306
+2018|计算机组成原理|https://zhuanlan.zhihu.com/p/658475595
+2019|计算机组成原理|https://zhuanlan.zhihu.com/p/658797337
+2020|计算机组成原理|https://zhuanlan.zhihu.com/p/658905116
+2021|计算机组成原理|https://zhuanlan.zhihu.com/p/658989376
+2022|计算机组成原理|https://zhuanlan.zhihu.com/p/659130642
+2023|计算机组成原理|https://zhuanlan.zhihu.com/p/659247670
+2024|计算机组成原理|https://zhuanlan.zhihu.com/p/720589394
