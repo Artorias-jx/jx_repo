@@ -10,6 +10,13 @@
 示例图
 ![625](assets/求nextval数组.png)
 先求 $next$ 数组，之后求 $nextval$  $nextval[1]=0$ 固定
+
+> [!tip] 一句话规则
+> 比较 $T[j]$ 与 $T[next[j]]$（即 next 所指那格）：
+> - ==相等== → $nextval[j]=nextval[next[j]]$（借它指的 nextval）
+> - ==不等== → $nextval[j]=next[j]$（用自己原来的 next）
+>
+> $j$ 从小到大推，保证 $nextval[next[j]]$ 已算好（因 $next[j]<j$）。
 若 $j$ 所指字符与 $next[j]$ 所指字符不相等
 如 $j=2$，$T[2]=b$，$T[next[2]]=a$，$nextval[j]=next[j]$
 若相等，则 $nextval[j]=nextval[next[j]]$
