@@ -54,12 +54,12 @@
 
 #### 模块一：【是什么】——活动介绍 / 职责说明 / 参会要求（适用：邀请信、招募通知、项目答复信）
 
-| 细分维度 | 高分可修改句型（带替换槽位） | 历年真题切题改写示范 |
-| :--- | :--- | :--- |
-| **1. 时间与地点** | `First of all, 【活动名称】 is scheduled to be held in/at 【地点】 from 【开始时间】 to 【结束时间】 on 【日期】.` | `First of all, the family letter exhibition is scheduled to be held in the Student Activity Center from 9:00 a.m. to 5:00 p.m. next Saturday.`（2026英一） |
-| **2. 活动流程与内容** | `Moreover, the event will feature diverse sessions, including 【环节1: a keynote speech】, 【环节2: a hands-on workshop】, and 【环节3: an interactive Q&A session】.` | `Moreover, the event will feature a keynote speech on traditional crafts, a live demonstration by young craftsmen, and a hands-on session.`（2025英一） |
-| **3. 招募职责与条件** | `The selected candidates will assist in 【职责: conducting surveys / organizing the venue】, and applicants are expected to be enthusiastic about 【领域】 with sound communication skills.` | `The selected student assistant will assist in conducting surveys and analyzing data on campus sports, and applicants should have sound organization skills.`（2023英一） |
-| **4. 现场指导与着装/考勤** | `In addition, please arrive 15 minutes in advance, and our staff will be on-site to provide necessary orientation and guidance.` / `It is advisable to be properly dressed for the occasion.` | `In addition, I wonder if you could arrive at the venue by 8:00 a.m. so that we can assist with the final preparations together.`（2025英一） |
+| 细分维度              | 高分可修改句型（带替换槽位）                                                                                                                                                                                | 历年真题切题改写示范                                                                                                                                                            |
+| :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1. 时间与地点**      | `First of all, 【活动名称】 is scheduled to be held in/at 【地点】 from 【开始时间】 to 【结束时间】 on 【日期】.`                                                                                                      | `First of all, the family letter exhibition is scheduled to be held in the Student Activity Center from 9:00 a.m. to 5:00 p.m. next Saturday.`（2026英一）                |
+| **2. 活动流程与内容**    | `Moreover, the event will feature diverse sessions, including 【环节1: a keynote speech】, 【环节2: a hands-on workshop】, and 【环节3: an interactive Q&A session】.`                                    | `Moreover, the event will feature a keynote speech on traditional crafts, a live demonstration by young craftsmen, and a hands-on session.`（2025英一）                   |
+| **3. 招募职责与条件**    | `The selected candidates will assist in 【职责: conducting surveys / organizing the venue】, and applicants are expected to be enthusiastic about 【领域】 with sound communication skills.`          | `The selected student assistant will assist in conducting surveys and analyzing data on campus sports, and applicants should have sound organization skills.`（2023英一） |
+| **4. 现场指导与着装/考勤** | `In addition, please arrive 15 minutes in advance, and our staff will be on-site to provide necessary orientation and guidance.` / `It is advisable to be properly dressed for the occasion.` | `In addition, I wonder if you could arrive at the venue by 8:00 a.m. so that we can assist with the final preparations together.`（2025英一）                             |
 
 #### 模块二：【为什么】——推荐理由 / 价值意义 / 道歉与投诉原因（适用：推荐信、分享感受、道歉信、投诉信）
 
@@ -88,9 +88,8 @@
 ```markdown
                                      Notice
                                                              【日期: December 20, 2026】
-
-    【句1：通知目的】To enrich students' extracurricular life / ensure the smooth progress of 【项目名称】, 【主办机构: the Students' Union】 is scheduled to 【动作: hold a singing contest / recruit student assistants】.
-    【句2：时间地点】First of all, the 【event / interview】 will take place in 【地点: the Student Activity Center】 from 【8:00 a.m. to 11:00 a.m. next Saturday】. 【句3：核心内容/职责要求】Moreover, 【活动内容: the contest features solo and chorus performances / the selected candidates will assist in data collection and analysis】. 【句4：参与资格/奖励要求】In addition, all students who 【are enthusiastic about music / have sound communication skills】 are eligible to participate, and 【the top three winners will receive certificates / this role will offer valuable research experience】.
+   【句1：通知目的】    To enrich students' extracurricular life / ensure the smooth progress of 【项目名称】, 【主办机构: the Students' Union】 is scheduled to 【动作: hold a singing contest / recruit student assistants】.
+   【句2：时间地点】First of all, the 【event / interview】 will take place in 【地点: the Student Activity Center】 from 【8:00 a.m. to 11:00 a.m. next Saturday】. 【句3：核心内容/职责要求】Moreover, 【活动内容: the contest features solo and chorus performances / the selected candidates will assist in data collection and analysis】. 【句4：参与资格/奖励要求】In addition, all students who 【are enthusiastic about music / have sound communication skills】 are eligible to participate, and 【the top three winners will receive certificates / this role will offer valuable research experience】.
     【句5：呼吁参加】We warmly welcome every interested student to join us and enjoy a rewarding experience. 【句6：报名方式】If you wish to sign up or learn more details, please send your application to 【邮箱: 123456@edu.cn】 no later than 【this Friday】.
 
                                                              【落款机构: The Students' Union】
