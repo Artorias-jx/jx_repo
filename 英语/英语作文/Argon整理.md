@@ -2,7 +2,7 @@
 
 > **定制设计说明：取百家之长，避套作之坑**
 > 本模板库严格依据你提供的博主评测指导思想与 8 份名师讲义深度融合而成：
-> 1. **小作文（10分，100词左右，8-9句）**：以 **柴荣的功能句组合 + Monkey“三元归一法” + 空卡242/132法** 为核心骨架，兼顾**AI归来**的高频场景句。将复杂的十几种信件合并为**主动信、回复信、通知（Notice）、会议纪要（Minutes）**四大底盘，中间段通过“**是什么（活动信息）+ 为什么（原因/利弊）+ 怎么办（具体建议）**”9句核心功能句自由拼装，轻松控字数、保句式。
+> 1. **小作文（10分，100词左右，8-9句）**：以 **柴荣的功能句组合 + Monkey“三元归一法” + 空卡343/132法** 为核心骨架，兼顾**AI归来**的高频场景句。将复杂的十几种信件合并为**主动信、回复信、通知（Notice）、会议纪要（Minutes）**四大底盘，中间段通过“**是什么（活动信息）+ 为什么（原因/利弊）+ 怎么办（具体建议）**”9句核心功能句自由拼装，轻松控字数、保句式。
 > 2. **大作文（20分，160-200词，10-11句）**：兼顾英一最新命题趋势（**传统图画、24年图画+图表、25年单表格、26年双图表、大纲文字材料**五合一）。用 **AI归来 + 空卡** 搭建快速切题的首段描述与三段式总框架，用 **大道至简Loru** 的严密逻辑（因果、正反、对比、身边/具体例证）替代空洞套话，并融入 **王晶婷 + Monkey** 的高分句式与六大核心语料库。
 > 3. **去伪存真与语法修正**：已全面剔除原资料中生硬、中式或存在语法瑕疵的表达（如修正了 monkey 原稿中的拼写笔误 `findat/establishe`、AI归来中部分过度绝对的恐吓句式、空卡中机械堆砌与主题脱节的“经济科技”万能原因），所有槽位均标注 **`【可替换槽位】`** 与 **切题改写方向**，方便你根据个人语感自由增删修改。
 
@@ -178,7 +178,7 @@ Prepared by: 【Li Ming】
   * **单图正面提炼**：`The scenario depicted in the picture serves as a compelling reminder that 【核心品质, 如 perseverance / stepping out of our comfort zone / interdisciplinary learning】 is crucial for overcoming challenges and achieving self-improvement.`
   * **双图/选择对比提炼**：`The sharp contrast in the pictures stems from divergent perceptions of the value of 【核心品质, 如 self-discipline / setting a good example / actual reading】.`
 * **句5（正面论证：为什么该品质重要？——大道至简+AI归来）**：
-  * `To begin with, throughout our academic and professional lives, we are bound to encounter various uncertainties and fierce competition. By embracing 【核心品质/做法, 如 challenging courses / a disciplined mindset / diverse knowledge】, not only can we broaden our horizons andhone our critical thinking, but we can also equip ourselves with core competitiveness to stand out in the future.`
+  * `To begin with, throughout our academic and professional lives, we are bound to encounter various uncertainties and fierce competition. By embracing 【核心品质/做法, 如 challenging courses / a disciplined mindset / diverse knowledge】, not only can we broaden our horizons and hone our critical thinking, but we can also equip ourselves with core competitiveness to stand out in the future.`
 * **句6（反面/对比论证：缺乏该品质有何危害？——大道至简+王晶婷）**：
   * `On the contrary, those who 【反面做法, 如 indulge in procrastination / merely seek immediate convenience / confine themselves to a narrow field】 may gain temporary ease, but they will inevitably miss out on precious opportunities for personal growth, rendering even minor obstacles insurmountable.`
 * **句7（例证支撑：身边微场景 或 经典人物二选一，选1句即可）**：
@@ -245,9 +245,9 @@ Prepared by: 【Li Ming】
 * **审题定方案**：被动回复熟人（类型B） + 第二段组合【为什么（文化价值）+ 是什么（展览时间地点）+ 怎么办（邀请同行）】
 * **套用成文（112词）**：
 > Dear Paul,
->     Thanks for your email. I am delighted to hear that you are keen on **the Chinese families' handwritten letters** I posted yesterday. I am writing to share more details about **these precious letters** and invite you to see them in person.
->     As for the questions you raised, here are the specific details. First of all, **handwritten family letters** are widely recognized as a symbol of **traditional Chinese family virtues**, carrying **deep affection and life wisdom from elders to younger generations**. Moreover, **a public exhibition featuring these letters** is scheduled to be held in **the City Museum** from **9:00 a.m. to 5:00 p.m. this Sunday**. In addition, I wonder if we could **meet at the museum entrance at 9:00 a.m. that day** so that we can appreciate them together.
->     I hope the information mentioned above proves helpful to you. Looking forward to your early reply.
+>     Thanks for your email. I am glad to hear that you are interested in the **handwritten family letters** I posted yesterday. Here are the specific details you asked for.
+>     First of all, these **letters** are regarded as a symbol of **traditional family virtues**, carrying **elders' affection and life wisdom**. Moreover, **a public exhibition featuring them** is scheduled to be held in **the City Museum** from **9:00 a.m. to 5:00 p.m. this Sunday**. In addition, I wonder if we could **meet at the museum entrance that morning** so that we can appreciate them together.
+>     I hope the information above proves helpful. Looking forward to your early reply.
 >                                                                                                                               Yours sincerely,
 >                                                                                                                               Li Ming
 
