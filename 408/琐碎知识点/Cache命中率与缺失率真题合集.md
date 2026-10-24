@@ -1,5 +1,7 @@
 # Cache 命中率与缺失率真题合集（数组篇·讲解版）
 
+<!-- PDF 导出：纸张选 A3、纵向、边距 10–15mm；每个“第 X 页”前已插入分页符。答案默认折叠，如需打印答案，导出前先展开。 -->
+
 ## 知识页｜做数组 Cache 题，按这个顺序看
 
 ### 1. 先看数组首元素在 Cache 块中的位置
@@ -46,7 +48,9 @@ $$\text{命中率}=1-\frac{\text{缺失次数}}{\text{总访问次数}}$$
 - 若问平均访问时间：$\text{AMAT}=t_{hit}+m\times t_{miss}$。
 - 遇到问地址字段的，再切 `| Tag | 行号/组号 | 块内地址 |`：块内地址 = $\log_2(\text{块大小})$，组数 = 行数 / 路数。
 
----
+
+<div style="page-break-after: always; break-after: page;"></div>
+
 ## 第 1 页｜2010·T44　按行 / 按列（直接映射）
 
 **题目（12 分）**
@@ -116,7 +120,7 @@ int sum_array1()
 >
 > 易错：==B 的步长 16 块是 8 行的整数倍==，不是“每 16 行冲突一次”；8 行 Cache 下是**每行都冲突**。
 
----
+<div style="page-break-after: always; break-after: page;"></div>
 
 ## 第 2 页｜2016·T15　直接映射缺失率（选择）
 
@@ -156,7 +160,7 @@ D. 25%
 >
 > 易错：漏掉写访问会算成 $1/4=25\%$（选项 D 就是给你踩的）。
 
----
+<div style="page-break-after: always; break-after: page;"></div>
 
 ## 第 3 页｜2020·T44　Cache 缺失次数（数组）
 
@@ -207,7 +211,7 @@ for (k = 0; k < 1024; k++)
 >
 > 易错：题目问的是==缺失次数==，不是缺失率；读写虽然各一次，但每块只缺一次。
 
----
+<div style="page-break-after: always; break-after: page;"></div>
 
 ## 第 4 页｜2023·T43　数组访问的 Cache 命中率
 
@@ -268,7 +272,7 @@ for (j = 0; j < 64; j++)
 >
 > 易错：==按列访问不一定命中率低==。要看组相联路数是否装得下同一列涉及的行数；本题 3 行 < 4 路，所以不冲突。
 
----
+<div style="page-break-after: always; break-after: page;"></div>
 
 ## 第 5 页｜2025·T45(3)　组相联 + 数组缺失率
 
@@ -312,7 +316,7 @@ int 占 4B，i、x 在寄存器中，代码已在 Cache 中，数组 d 在主存
 >
 > 易错：==首块不是满块==（d[0] 从块内 32B 开始），所以是 129 块而不是 $2048/16=128$ 块；另外读+写要算 2 次访存。
 
----
+<div style="page-break-after: always; break-after: page;"></div>
 
 ## 附页｜不是数组遍历的命中率题
 
